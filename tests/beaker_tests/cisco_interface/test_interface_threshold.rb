@@ -41,6 +41,8 @@ tests = {
   master:    master,
   intf_type: 'all',
 }
+# Skip -ALL- tests if being run on a non-default VDC
+skip_non_default_vdc(agent)
 
 tests[:intf_array] = intf_array = find_interface_array(tests)
 tests[:threshold] = threshold = (intf_array.length * 0.15).to_i
